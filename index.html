@@ -1,43 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início - Chá de Casa Nova</title>
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chá de Casa Nova</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+        color: #333;
+    }
+
+    header {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 25px 10px;
+    }
+
+    main, section {
+        padding: 20px;
+    }
+
+    .container {
+        background: #fff;
+        padding: 25px;
+        max-width: 1000px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    /* ===== LAYOUT DESKTOP ===== */
+    .flex-desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .sobre-texto {
+        flex: 1;
+    }
+
+    .sobre-img img {
+        width: 380px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* ===== SESSÃO PIX ===== */
+    .pix-layout {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .pix-info {
+        flex: 1;
+        text-align: left;
+    }
+
+    .pix-info p {
+        font-size: 1.1rem;
+    }
+
+    .pix-qr img {
+        width: 260px;
+        max-width: 100%;
+    }
+
+    footer {
+        margin-top: 40px;
+        background: #333;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    /* ===== RESPONSIVO CELULAR ===== */
+    @media (max-width: 768px) {
+        .flex-desktop,
+        .pix-layout {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .sobre-texto,
+        .pix-info {
+            text-align: center;
+        }
+
+        .pix-qr img {
+            margin-top: 15px;
+        }
+    }
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>Chá de Casa Nova</h1>
-        <h3>Ajude-me a tornar minha casa nova um lar aconchegante!</h3>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Início</a></li>
-                <li><a href="/sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="container">
-            <h1>Presentear</h1>
-            <h4>Faça parte de nossa nova jornada.</h4>
-            <div>
-                <!-- Botão "Presentear" com redirecionamento para presentear.html -->
-                <button class="btn-presentear" id="btnPresentear">Clique aqui !</button>
+<header>
+    <h1>Chá de Casa Nova</h1>
+    <h3>Ajude-me a tornar minha casa nova um lar aconchegante!</h3>
+</header>
+
+<main>
+    <!-- SOBRE NÓS -->
+    <section id="sobre">
+        <div class="container flex-desktop">
+
+            <div class="sobre-texto">
+                <h1>Um pouquinho sobre nós</h1>
+                <p>Olá! Somos um casal cheio de sonhos e agora com uma grande novidade: estamos nos mudando para a nossa casa nova! Queremos compartilhar essa felicidade com todos vocês, que fazem parte da nossa vida.</p>
+                <p>Este site foi criado para que nossos amigos e familiares possam nos ajudar a transformar esse espaço no nosso cantinho especial. Cada presente escolhido aqui será mais do que um objeto — será um pedacinho da nossa história construída juntos.</p>
+                <p>Agradecemos do fundo do coração por fazer parte deste momento tão especial. ❤️</p>
+
+                <div class="contato">
+                    <h3>Contato</h3>
+                    <p>Email: davyd.nascimento95@gmail.com</p>
+                    <p>Telefone: (21) 9 9125-7810</p>
+                    <p>Telefone: (21) 9 9318-7622</p>
+                    <p>Endereço: R. Crisólia, 270 - Rio de Janeiro, RJ</p>
+                </div>
             </div>
-            <p class="mensagem"></p>
+
+            <div class="sobre-img">
+                <img src="/nos.png" alt="Sobre nós" />
+            </div>
+
         </div>
-    </main>
+    </section>
+</main>
 
-    <footer>
-        <h4>Obrigado por fazer parte da nossa nova jornada!</h4>
-    </footer>
+<section id="Pix">
+    <div class="container pix-layout">
 
-    <script src="/js/script.js"></script>
+        <div class="pix-info">
+            <h1>Faça parte de nossa nova jornada.</h1>
+            <h2>Nossa conta PIX</h2>
+            <p><strong>Chave PIX:</strong> dvdbarbudo@jim.com</p>
+            <p>Escaneie o QR Code abaixo:</p>
+        </div>
+
+        <div class="pix-qr">
+            <img src="/qrcode.png" alt="QR Code PIX" />
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h4>Obrigado por fazer parte da nossa nova jornada!</h4>
+</footer>
+
+<script>
+// Rolagem suave para links com #
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const destino = document.querySelector(link.getAttribute('href'));
+        destino.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
 </body>
-
-
 </html>
